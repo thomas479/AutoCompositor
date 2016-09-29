@@ -46,6 +46,9 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Compositor\Auto.cs" />
+    <Compile Include="Compositor\AutoGroup.cs" />
+    <Compile Include="Compositor\IAutoComponent.cs" />
     <Compile Include="Form1.cs">
       <SubType>Form</SubType>
     </Compile>
