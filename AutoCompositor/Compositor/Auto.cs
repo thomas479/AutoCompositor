@@ -25,7 +25,7 @@ namespace AutoCompositor.Compositor
                 image.Width = 200;
                 image.SizeMode = PictureBoxSizeMode.Zoom;
                 image.Anchor = (AnchorStyles.Top | AnchorStyles.Left);
-                image.BackColor = Color.Blue;
+                image.BackColor = Color.Transparent;
                 Random r = new Random();
                 Location = new PointF(r.Next(form.Width - 150), r.Next(form.Height - 150));
                 image.Location = new Point(Convert.ToInt32(Location.X), Convert.ToInt32(Location.Y));

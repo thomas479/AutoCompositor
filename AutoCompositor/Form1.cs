@@ -18,6 +18,7 @@ namespace AutoCompositor
         Rectangle selection;
         Compositor.AutoGroup autoList, selectedList;
         bool mouseDown;
+        bool buttonClick = false;
 
         public Form1()
         {
@@ -96,15 +97,33 @@ namespace AutoCompositor
             mouseDown = false;
             SetSelectionRect();
 
-            
-            
-
             Invalidate();
         }
 
         private void Form1_Load(object sender, EventArgs e)
         {
             autoList = new Compositor.AutoGroup();
+        }
+
+        private void DiscoButton_Click(object sender, EventArgs e)
+        {
+            buttonClick = !buttonClick;
+            if(buttonClick)
+                backgroundWorker1.RunWorkerAsync();
+
+        }
+
+        private void backgroundWorker1_DoWork(object sender, DoWorkEventArgs e)
+        {
+            Random r = new Random();
+            while(buttonClick)
+            {
+                foreach (var auto in selectedList.AutoComponents)
+                {
+                    Color rand = Color.FromArgb(r.Next(0, 255), r.Next(0, 255), r.Next(0, 255));
+                    auto.SetColor(rand);
+                }
+            }
         }
     }
 }
