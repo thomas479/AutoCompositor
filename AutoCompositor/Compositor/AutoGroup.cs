@@ -13,27 +13,31 @@ namespace AutoCompositor.Compositor
 
         public void Add(IAutoComponent autoComponent)
         {
-            //Do add logic
+            AutoComponents.Add(autoComponent);
         }
-
-        public void GetChild(IAutoComponent autoComponent)
+        
+        public void Move(PointF location)
         {
-            //Do child logic
-        }
+            foreach(IAutoComponent auto in AutoComponents)
+            {
+                //Do move logic on all the autos
+            }
 
-        public void Move(int x, int y)
-        {
-            //Do move logic on all the autos
         }
 
         public void Remove(IAutoComponent autoComponent)
         {
+            AutoComponents.Remove(autoComponent);
             //Do remove logic
         }
 
         public void SetColor(Color color)
         {
-            //Set color of autos
+            foreach (IAutoComponent auto in AutoComponents)
+            {
+                auto.SetColor(color);
+                //Set color of autos
+            }
         }
     }
 }

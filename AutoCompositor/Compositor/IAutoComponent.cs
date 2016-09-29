@@ -11,7 +11,6 @@ namespace AutoCompositor.Compositor
     {
         void Add(IAutoComponent autoComponent);
         void Remove(IAutoComponent autoComponent);
-        void GetChild(IAutoComponent autoComponent);
 
         /// <summary>
         /// Set the color of the IAutoComponent
@@ -24,6 +23,6 @@ namespace AutoCompositor.Compositor
         /// </summary>
         /// <param name="x"></param>
         /// <param name="y"></param>
-        void Move(int x, int y);
+        void Move(PointF location);
     }
 }
