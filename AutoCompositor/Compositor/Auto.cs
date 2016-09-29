@@ -22,12 +22,13 @@ namespace AutoCompositor.Compositor
                 image.Image = Bitmap.FromFile(System.Environment.CurrentDirectory + "\\ovlov.png");
                 image.Visible = true;
                 image.Height = 100;
-                image.Width = 100;
+                image.Width = 200;
                 image.SizeMode = PictureBoxSizeMode.Zoom;
                 image.Anchor = (AnchorStyles.Top | AnchorStyles.Left);
-                image.BackColor = Color.Transparent;
+                image.BackColor = Color.Blue;
                 Random r = new Random();
-                image.Location = new Point(r.Next(form.Width - 150), r.Next(form.Height - 150));
+                Location = new PointF(r.Next(form.Width - 150), r.Next(form.Height - 150));
+                image.Location = new Point(Convert.ToInt32(Location.X), Convert.ToInt32(Location.Y));
             }
             form.Controls.Add(image);
         }
