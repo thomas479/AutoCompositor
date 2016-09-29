@@ -9,6 +9,15 @@ namespace AutoCompositor.Compositor
 {
     class Auto : IAutoComponent
     {
+        public int xPosition { get; set; }
+        public int yPosition { get; set; }
+        public Color color { get; set; }
+
+        public Auto()
+        {
+            color = Color.BurlyWood;
+        }
+
         public void Add(IAutoComponent autoComponent)
         {
             throw new NotImplementedException();
@@ -21,7 +30,8 @@ namespace AutoCompositor.Compositor
 
         public void Move(int x, int y)
         {
-            //Do move logic
+            xPosition = x;
+            yPosition = y;
         }
 
         public void Remove(IAutoComponent autoComponent)
