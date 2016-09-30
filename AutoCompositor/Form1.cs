@@ -33,12 +33,7 @@ namespace AutoCompositor
 
         private void ChangeColourButton_Click(object sender, EventArgs e)
         {
-            Random r = new Random();
-            Color rand = Color.FromArgb(r.Next(0, 255), r.Next(0, 255), r.Next(0, 255));
-            foreach (var auto in selectedList.AutoComponents)
-            {
-                auto.SetColor(rand);
-            }
+            //
         }
 
         private void Form1_MouseDown(object sender, MouseEventArgs e)
@@ -103,6 +98,14 @@ namespace AutoCompositor
         private void Form1_Load(object sender, EventArgs e)
         {
             autoList = new Compositor.AutoGroup();
+            foreach (Color color in new ColorConverter().GetStandardValues())
+            {
+                ColourChanger item = new ColourChanger();
+                item.Text = color.Name;
+                item.Value = color.Name;
+
+                colorCombo.Items.Add(item);
+            }
         }
 
         private void DiscoButton_Click(object sender, EventArgs e)
@@ -111,6 +114,16 @@ namespace AutoCompositor
             if(buttonClick)
                 backgroundWorker1.RunWorkerAsync();
 
+        }
+
+        private void colorCombo_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            ComboBox combo = (ComboBox)sender;
+            Color rand = Color.FromName(combo.SelectedItem.ToString());
+            foreach (var auto in selectedList.AutoComponents)
+            {
+                auto.SetColor(rand);
+            }
         }
 
         private void backgroundWorker1_DoWork(object sender, DoWorkEventArgs e)

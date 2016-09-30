@@ -29,9 +29,9 @@
         private void InitializeComponent()
         {
             this.AddAutoButton = new System.Windows.Forms.Button();
-            this.ChangeColourButton = new System.Windows.Forms.Button();
             this.DiscoButton = new System.Windows.Forms.Button();
             this.backgroundWorker1 = new System.ComponentModel.BackgroundWorker();
+            this.colorCombo = new System.Windows.Forms.ComboBox();
             this.SuspendLayout();
             // 
             // AddAutoButton
@@ -43,16 +43,6 @@
             this.AddAutoButton.Text = "Add auto";
             this.AddAutoButton.UseVisualStyleBackColor = true;
             this.AddAutoButton.Click += new System.EventHandler(this.AddAutoButton_Click);
-            // 
-            // ChangeColourButton
-            // 
-            this.ChangeColourButton.Location = new System.Drawing.Point(49, 97);
-            this.ChangeColourButton.Name = "ChangeColourButton";
-            this.ChangeColourButton.Size = new System.Drawing.Size(90, 23);
-            this.ChangeColourButton.TabIndex = 1;
-            this.ChangeColourButton.Text = "Change colour";
-            this.ChangeColourButton.UseVisualStyleBackColor = true;
-            this.ChangeColourButton.Click += new System.EventHandler(this.ChangeColourButton_Click);
             // 
             // DiscoButton
             // 
@@ -68,13 +58,22 @@
             // 
             this.backgroundWorker1.DoWork += new System.ComponentModel.DoWorkEventHandler(this.backgroundWorker1_DoWork);
             // 
+            // colorCombo
+            // 
+            this.colorCombo.FormattingEnabled = true;
+            this.colorCombo.Location = new System.Drawing.Point(49, 85);
+            this.colorCombo.Name = "colorCombo";
+            this.colorCombo.Size = new System.Drawing.Size(90, 21);
+            this.colorCombo.TabIndex = 3;
+            this.colorCombo.SelectedIndexChanged += new System.EventHandler(this.colorCombo_SelectedIndexChanged);
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1132, 747);
+            this.Controls.Add(this.colorCombo);
             this.Controls.Add(this.DiscoButton);
-            this.Controls.Add(this.ChangeColourButton);
             this.Controls.Add(this.AddAutoButton);
             this.Name = "Form1";
             this.Text = "Auto Compositor Pattern";
@@ -90,9 +89,9 @@
         #endregion
 
         private System.Windows.Forms.Button AddAutoButton;
-        private System.Windows.Forms.Button ChangeColourButton;
         private System.Windows.Forms.Button DiscoButton;
         private System.ComponentModel.BackgroundWorker backgroundWorker1;
+        private System.Windows.Forms.ComboBox colorCombo;
     }
 }
 
