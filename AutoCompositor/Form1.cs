@@ -20,6 +20,15 @@ namespace AutoCompositor
         bool mouseDown;
         bool buttonClick = false;
 
+        // Colors
+        ColourChanger CreamYellow = new ColourChanger("Cream Yellow", "255,254,151");
+        ColourChanger BlackStone = new ColourChanger("Black Stone", "21,22,24");
+        ColourChanger DarkOlivePearl = new ColourChanger("Dark Olive Pearl", "7,65,17");
+        ColourChanger Turquoise = new ColourChanger("Turquoise", "58,131,140");
+        ColourChanger White = new ColourChanger("White", "253,253,241");
+        ColourChanger BrilliantRed = new ColourChanger("Brilliant Red", "196,19,45");
+        ColourChanger GunMetalGrey = new ColourChanger("Gun Metal Grey", "103,99,98");
+
         public Form1()
         {
             InitializeComponent();            
@@ -96,15 +105,14 @@ namespace AutoCompositor
 
         private void Form1_Load(object sender, EventArgs e)
         {
-            autoList = new Compositor.AutoGroup();
-            foreach (Color color in new ColorConverter().GetStandardValues())
-            {
-                ColourChanger item = new ColourChanger();
-                item.Text = color.Name;
-                item.Value = color.Name;
-
-                colorCombo.Items.Add(item);
-            }
+            autoList = new Compositor.AutoGroup();                                    
+            colorCombo.Items.Add(CreamYellow);
+            colorCombo.Items.Add(BlackStone);
+            colorCombo.Items.Add(DarkOlivePearl);
+            colorCombo.Items.Add(Turquoise);
+            colorCombo.Items.Add(White);
+            colorCombo.Items.Add(BrilliantRed);
+            colorCombo.Items.Add(GunMetalGrey);
         }
 
         private void DiscoButton_Click(object sender, EventArgs e)
@@ -118,7 +126,14 @@ namespace AutoCompositor
         private void colorCombo_SelectedIndexChanged(object sender, EventArgs e)
         {
             ComboBox combo = (ComboBox)sender;
-            Color rand = Color.FromName(combo.SelectedItem.ToString());
+            ColourChanger colorCode = (ColourChanger)combo.SelectedItem;
+            var rgbCodeString = colorCode.Value.Split(',');
+            int[] rgbCode = new int[3];
+            rgbCode[0] = Convert.ToInt32(rgbCodeString[0]);
+            rgbCode[1] = Convert.ToInt32(rgbCodeString[1]);
+            rgbCode[2] = Convert.ToInt32(rgbCodeString[2]);
+        
+            Color rand = Color.FromArgb(rgbCode[0], rgbCode[1], rgbCode[2]);
             foreach (var auto in selectedList.AutoComponents)
             {
                 auto.SetColor(rand);
@@ -130,11 +145,15 @@ namespace AutoCompositor
             Random r = new Random();
             while(buttonClick)
             {
-                foreach (var auto in selectedList.AutoComponents)
-                {
-                    Color rand = Color.FromArgb(r.Next(0, 255), r.Next(0, 255), r.Next(0, 255));
-                    auto.SetColor(rand);
-                }
+                var colorCode = (ColourChanger)colorCombo.Items[r.Next(colorCombo.Items.Count)];
+                var rgbCodeString = colorCode.Value.Split(',');
+                int[] rgbCode = new int[3];
+                rgbCode[0] = Convert.ToInt32(rgbCodeString[0]);
+                rgbCode[1] = Convert.ToInt32(rgbCodeString[1]);
+                rgbCode[2] = Convert.ToInt32(rgbCodeString[2]);
+
+                Color rand = Color.FromArgb(rgbCode[0], rgbCode[1], rgbCode[2]);                
+                selectedList.SetColor(rand);
             }
         }
     }
