@@ -35,10 +35,7 @@ namespace AutoCompositor
         {
             Random r = new Random();
             Color rand = Color.FromArgb(r.Next(0, 255), r.Next(0, 255), r.Next(0, 255));
-            foreach (var auto in selectedList.AutoComponents)
-            {
-                auto.SetColor(rand);
-            }
+            selectedList.SetColor(rand);
         }
 
         private void Form1_MouseDown(object sender, MouseEventArgs e)
@@ -88,11 +85,10 @@ namespace AutoCompositor
         {
             if (mouseDown)
             {
+                selectedList = autoList;
+                selectedList.UnmarkSelected();
                 selectedList = autoList.Selected(selectionStart, selectionEnd);
-                //foreach (var auto in selectedList.AutoComponents)
-                //{
-                //    auto.SetColor(Color.Cyan);
-                //}
+                selectedList.MarkSelected();
             }
             mouseDown = false;
             SetSelectionRect();
