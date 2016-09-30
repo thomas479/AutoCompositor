@@ -24,5 +24,7 @@ namespace AutoCompositor.Compositor
         /// <param name="x"></param>
         /// <param name="y"></param>
         void Move(PointF location);
+
+        PointF Location { get; set; }
     }
 }

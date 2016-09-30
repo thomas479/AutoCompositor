@@ -11,9 +11,33 @@ namespace AutoCompositor.Compositor
     {
         public List<IAutoComponent> AutoComponents { get; set; }
 
+        public AutoGroup()
+        {
+            AutoComponents = new List<IAutoComponent>();
+        }
+
         public void Add(IAutoComponent autoComponent)
         {
             AutoComponents.Add(autoComponent);
+        }
+
+        public AutoGroup Selected(PointF startPoint, PointF endPoint)
+        {
+            AutoGroup selection = new AutoGroup();
+
+            var temp = AutoComponents.Where(auto =>
+                ((auto.Location.X > startPoint.X && auto.Location.X < endPoint.X) ||
+                (auto.Location.X < startPoint.X && auto.Location.X > endPoint.X)) &&
+                ((auto.Location.Y > startPoint.Y && auto.Location.Y < endPoint.Y) ||
+                (auto.Location.Y < startPoint.Y && auto.Location.Y > endPoint.Y))
+            );
+
+            foreach (var auto in temp)
+            {
+                selection.Add(auto);
+            }
+            
+            return selection;
         }
         
         public void Move(PointF location)
@@ -37,6 +61,19 @@ namespace AutoCompositor.Compositor
             {
                 auto.SetColor(color);
                 //Set color of autos
+            }
+        }
+
+
+        public PointF Location
+        {
+            get
+            {
+                throw new NotImplementedException();
+            }
+            set
+            {
+                throw new NotImplementedException();
             }
         }
     }

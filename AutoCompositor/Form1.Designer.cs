@@ -30,6 +30,8 @@
         {
             this.AddAutoButton = new System.Windows.Forms.Button();
             this.ChangeColourButton = new System.Windows.Forms.Button();
+            this.DiscoButton = new System.Windows.Forms.Button();
+            this.backgroundWorker1 = new System.ComponentModel.BackgroundWorker();
             this.SuspendLayout();
             // 
             // AddAutoButton
@@ -52,16 +54,32 @@
             this.ChangeColourButton.UseVisualStyleBackColor = true;
             this.ChangeColourButton.Click += new System.EventHandler(this.ChangeColourButton_Click);
             // 
+            // DiscoButton
+            // 
+            this.DiscoButton.Location = new System.Drawing.Point(49, 333);
+            this.DiscoButton.Name = "DiscoButton";
+            this.DiscoButton.Size = new System.Drawing.Size(90, 23);
+            this.DiscoButton.TabIndex = 2;
+            this.DiscoButton.Text = "Disco";
+            this.DiscoButton.UseVisualStyleBackColor = true;
+            this.DiscoButton.Click += new System.EventHandler(this.DiscoButton_Click);
+            // 
+            // backgroundWorker1
+            // 
+            this.backgroundWorker1.DoWork += new System.ComponentModel.DoWorkEventHandler(this.backgroundWorker1_DoWork);
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1132, 747);
+            this.Controls.Add(this.DiscoButton);
             this.Controls.Add(this.ChangeColourButton);
             this.Controls.Add(this.AddAutoButton);
             this.Name = "Form1";
             this.Text = "Auto Compositor Pattern";
             this.WindowState = System.Windows.Forms.FormWindowState.Maximized;
+            this.Load += new System.EventHandler(this.Form1_Load);
             this.MouseDown += new System.Windows.Forms.MouseEventHandler(this.Form1_MouseDown);
             this.MouseMove += new System.Windows.Forms.MouseEventHandler(this.Form1_MouseMove);
             this.MouseUp += new System.Windows.Forms.MouseEventHandler(this.Form1_MouseUp);
@@ -73,6 +91,8 @@
 
         private System.Windows.Forms.Button AddAutoButton;
         private System.Windows.Forms.Button ChangeColourButton;
+        private System.Windows.Forms.Button DiscoButton;
+        private System.ComponentModel.BackgroundWorker backgroundWorker1;
     }
 }
 
