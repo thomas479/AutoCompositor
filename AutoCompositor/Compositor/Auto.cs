@@ -19,7 +19,7 @@ namespace AutoCompositor.Compositor
             color = Color.BurlyWood;
             image = new PictureBox();
             {
-                image.Image = Bitmap.FromFile(System.Environment.CurrentDirectory + "\\ovlov.png");
+                image.Image = Image.FromFile(System.Environment.CurrentDirectory + "\\ovlov.png");
                 image.Visible = true;
                 image.Height = 100;
                 image.Width = 100;
