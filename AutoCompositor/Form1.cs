@@ -83,11 +83,10 @@ namespace AutoCompositor
         {
             if (mouseDown)
             {
+                selectedList = autoList;
+                selectedList.UnmarkSelected();
                 selectedList = autoList.Selected(selectionStart, selectionEnd);
-                //foreach (var auto in selectedList.AutoComponents)
-                //{
-                //    auto.SetColor(Color.Cyan);
-                //}
+                selectedList.MarkSelected();
             }
             mouseDown = false;
             SetSelectionRect();

@@ -55,5 +55,14 @@ namespace AutoCompositor.Compositor
             BitmapExt.ChangeColour(bitmap, 255, 0, 255, color.R, color.G, color.B);
             image.Image = bitmap;
         }
+
+        public void MarkSelected()
+        {
+            image.BackColor = Color.DarkSalmon;
+        }
+        public void UnmarkSelected()
+        {
+            image.BackColor = Color.Transparent;
+        }
     }
 }

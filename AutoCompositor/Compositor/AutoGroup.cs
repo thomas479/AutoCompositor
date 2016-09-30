@@ -64,6 +64,20 @@ namespace AutoCompositor.Compositor
             }
         }
 
+        public void MarkSelected() {
+            foreach (IAutoComponent auto in AutoComponents)
+            {
+                auto.MarkSelected();
+            }
+        }
+        public void UnmarkSelected()
+        {
+            foreach (IAutoComponent auto in AutoComponents)
+            {
+                auto.UnmarkSelected();
+            }
+        }
+
 
         public PointF Location
         {
