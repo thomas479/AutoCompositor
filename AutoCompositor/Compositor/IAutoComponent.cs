@@ -4,6 +4,7 @@ using System.Drawing;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using System.Windows.Forms;
 
 namespace AutoCompositor.Compositor
 {
@@ -28,5 +29,7 @@ namespace AutoCompositor.Compositor
         void UnmarkSelected();
 
         PointF Location { get; set; }
+        Color color { get; set; }
+        PictureBox image { get; set; }
     }
 }

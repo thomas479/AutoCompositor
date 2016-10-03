@@ -33,6 +33,7 @@
             this.DiscoButton = new System.Windows.Forms.Button();
             this.backgroundWorker1 = new System.ComponentModel.BackgroundWorker();
             this.colorCombo = new System.Windows.Forms.ComboBox();
+            this.button1 = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
             // AddAutoButton
@@ -41,7 +42,7 @@
             this.AddAutoButton.Name = "AddAutoButton";
             this.AddAutoButton.Size = new System.Drawing.Size(90, 23);
             this.AddAutoButton.TabIndex = 0;
-            this.AddAutoButton.Text = "Add auto";
+            this.AddAutoButton.Text = "Add Volvo";
             this.AddAutoButton.UseVisualStyleBackColor = true;
             this.AddAutoButton.Click += new System.EventHandler(this.AddAutoButton_Click);
             // 
@@ -68,11 +69,22 @@
             this.colorCombo.TabIndex = 3;
             this.colorCombo.SelectedIndexChanged += new System.EventHandler(this.colorCombo_SelectedIndexChanged);
             // 
+            // button1
+            // 
+            this.button1.Location = new System.Drawing.Point(145, 56);
+            this.button1.Name = "button1";
+            this.button1.Size = new System.Drawing.Size(90, 23);
+            this.button1.TabIndex = 4;
+            this.button1.Text = "Add Pao";
+            this.button1.UseVisualStyleBackColor = true;
+            this.button1.Click += new System.EventHandler(this.button1_Click);
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1132, 747);
+            this.Controls.Add(this.button1);
             this.Controls.Add(this.colorCombo);
             this.Controls.Add(this.DiscoButton);
             this.Controls.Add(this.AddAutoButton);
@@ -94,6 +106,7 @@
         private System.Windows.Forms.Button DiscoButton;
         private System.ComponentModel.BackgroundWorker backgroundWorker1;
         private System.Windows.Forms.ComboBox colorCombo;
+        private System.Windows.Forms.Button button1;
     }
 }
 

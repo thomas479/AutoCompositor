@@ -47,9 +47,10 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="ColourChanger.cs" />
-    <Compile Include="Compositor\Auto.cs" />
+    <Compile Include="Compositor\Ovlov.cs" />
     <Compile Include="Compositor\AutoGroup.cs" />
     <Compile Include="Compositor\IAutoComponent.cs" />
+    <Compile Include="Compositor\Pao.cs" />
     <Compile Include="Form1.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -85,6 +86,9 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="ovlov.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="pao.png">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
     <Content Include="volvo.ico">

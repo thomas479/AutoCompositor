@@ -8,18 +8,17 @@ using System.Windows.Forms;
 
 namespace AutoCompositor.Compositor
 {
-    class Auto : IAutoComponent
+    class Pao : IAutoComponent
     {
         public PointF Location { get; set; }
         public Color color { get; set; }
-        PictureBox image;
-
-        public Auto(Form1 form)
+        public PictureBox image { get; set; }
+        public Pao(Form1 form)
         {
             color = Color.BurlyWood;
             image = new PictureBox();
             {
-                image.Image = Image.FromFile(System.Environment.CurrentDirectory + "\\ovlov.png");
+                image.Image = Image.FromFile(System.Environment.CurrentDirectory + "\\pao.png");
                 image.Visible = true;
                 image.Height = 100;
                 image.Width = 200;
@@ -51,7 +50,7 @@ namespace AutoCompositor.Compositor
         public void SetColor(Color color)
         {
             this.color = color;
-            Bitmap bitmap = new Bitmap(System.Environment.CurrentDirectory + "\\ovlov.png");
+            Bitmap bitmap = new Bitmap(System.Environment.CurrentDirectory + "\\pao.png");
             BitmapExt.ChangeColour(bitmap, 255, 0, 255, color.R, color.G, color.B);
             image.Image = bitmap;
         }

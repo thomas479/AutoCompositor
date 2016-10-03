@@ -36,7 +36,7 @@ namespace AutoCompositor
 
         private void AddAutoButton_Click(object sender, EventArgs e)
         {
-            Compositor.IAutoComponent auto = new Compositor.Auto(this);
+            Compositor.IAutoComponent auto = new Compositor.Ovlov(this);
             autoList.Add(auto);
         }
 
@@ -134,10 +134,13 @@ namespace AutoCompositor
             rgbCode[2] = Convert.ToInt32(rgbCodeString[2]);
         
             Color rand = Color.FromArgb(rgbCode[0], rgbCode[1], rgbCode[2]);
-            foreach (var auto in selectedList.AutoComponents)
-            {
-                auto.SetColor(rand);
-            }
+            selectedList.SetColor(rand);
+        }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+            Compositor.IAutoComponent auto = new Compositor.Pao(this);
+            autoList.Add(auto);
         }
 
         private void backgroundWorker1_DoWork(object sender, DoWorkEventArgs e)

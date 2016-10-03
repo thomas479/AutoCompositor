@@ -4,6 +4,7 @@ using System.Drawing;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using System.Windows.Forms;
 
 namespace AutoCompositor.Compositor
 {
@@ -85,6 +86,32 @@ namespace AutoCompositor.Compositor
             {
                 throw new NotImplementedException();
             }
+            set
+            {
+                throw new NotImplementedException();
+            }
+        }
+
+        public Color color
+        {
+            get
+            {
+                throw new NotImplementedException();
+            }
+
+            set
+            {
+                throw new NotImplementedException();
+            }
+        }
+
+        public PictureBox image
+        {
+            get
+            {
+                throw new NotImplementedException();
+            }
+
             set
             {
                 throw new NotImplementedException();
