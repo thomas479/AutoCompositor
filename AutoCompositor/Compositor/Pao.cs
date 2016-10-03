@@ -13,6 +13,19 @@ namespace AutoCompositor.Compositor
         public PointF Location { get; set; }
         public Color color { get; set; }
         public PictureBox image { get; set; }
+
+        internal IAutoComponent IAutoComponent
+        {
+            get
+            {
+                throw new System.NotImplementedException();
+            }
+
+            set
+            {
+            }
+        }
+
         public Pao(Form1 form)
         {
             color = Color.BurlyWood;

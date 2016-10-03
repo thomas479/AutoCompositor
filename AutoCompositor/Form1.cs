@@ -34,6 +34,18 @@ namespace AutoCompositor
             InitializeComponent();            
         }
 
+        internal Compositor.IAutoComponent IAutoComponent
+        {
+            get
+            {
+                throw new System.NotImplementedException();
+            }
+
+            set
+            {
+            }
+        }
+
         private void AddAutoButton_Click(object sender, EventArgs e)
         {
             Compositor.IAutoComponent auto = new Compositor.Ovlov(this);
