@@ -37,13 +37,13 @@ namespace AutoCompositor.Compositor
             {
                 selection.Add(auto);
             }
-            
+
             return selection;
         }
-        
+
         public void Move(PointF location)
         {
-            foreach(IAutoComponent auto in AutoComponents)
+            foreach (IAutoComponent auto in AutoComponents)
             {
                 //Do move logic on all the autos
             }
@@ -65,7 +65,8 @@ namespace AutoCompositor.Compositor
             }
         }
 
-        public void MarkSelected() {
+        public void MarkSelected()
+        {
             foreach (IAutoComponent auto in AutoComponents)
             {
                 auto.MarkSelected();
@@ -115,6 +116,18 @@ namespace AutoCompositor.Compositor
             set
             {
                 throw new NotImplementedException();
+            }
+        }
+
+        internal IAutoComponent IAutoComponent
+        {
+            get
+            {
+                throw new System.NotImplementedException();
+            }
+
+            set
+            {
             }
         }
     }

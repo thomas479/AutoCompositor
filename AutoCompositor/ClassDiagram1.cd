@@ -1,0 +1,57 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<ClassDiagram MajorVersion="1" MinorVersion="1" MembersFormat="NameAndType">
+  <Class Name="AutoCompositor.Form1" Collapsed="true">
+    <Position X="0.5" Y="4.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>IQSEAEwIACAACYAAAECAAAAWBAgoCgQgAEVgQAAEBAA=</HashCode>
+      <FileName>Form1.cs</FileName>
+    </TypeIdentifier>
+    <ShowAsAssociation>
+      <Property Name="IAutoComponent" />
+    </ShowAsAssociation>
+  </Class>
+  <Class Name="AutoCompositor.Compositor.AutoGroup" Collapsed="true" BaseTypeListCollapsed="true">
+    <Position X="0.5" Y="1.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAIAAAAAAIAAQAAAAAIABAAAEAAAAACAIAgAQAAAAAI=</HashCode>
+      <FileName>Compositor\AutoGroup.cs</FileName>
+    </TypeIdentifier>
+    <ShowAsAssociation>
+      <Property Name="IAutoComponent" />
+    </ShowAsAssociation>
+    <Lollipop Position="0.1" Collapsed="true" />
+  </Class>
+  <Class Name="AutoCompositor.Compositor.Ovlov" Collapsed="true" BaseTypeListCollapsed="true">
+    <Position X="2.25" Y="1.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAIAAAAAAIAAQAAAAAIABAAAEAAAAACAAAgAQAAAAAA=</HashCode>
+      <FileName>Compositor\Ovlov.cs</FileName>
+    </TypeIdentifier>
+    <ShowAsAssociation>
+      <Property Name="IAutoComponent" />
+    </ShowAsAssociation>
+    <Lollipop Position="0.2" Collapsed="true" />
+  </Class>
+  <Class Name="AutoCompositor.Compositor.Pao" Collapsed="true" BaseTypeListCollapsed="true">
+    <Position X="4.25" Y="1.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAIAAAAAAIAAQAAAAAIABAAAEAAAAACAAAgAQAAAAAA=</HashCode>
+      <FileName>Compositor\Pao.cs</FileName>
+    </TypeIdentifier>
+    <ShowAsAssociation>
+      <Property Name="IAutoComponent" />
+    </ShowAsAssociation>
+    <Lollipop Orientation="Left" Position="0.1" Collapsed="true" />
+  </Class>
+  <Interface Name="AutoCompositor.Compositor.IAutoComponent" Collapsed="true">
+    <Position X="0.5" Y="2.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAIAAAAABIAAQAAAAAIABAAAEAAAAACAAAgAAAAAAAA=</HashCode>
+      <FileName>Compositor\IAutoComponent.cs</FileName>
+    </TypeIdentifier>
+    <ShowAsAssociation>
+      <Property Name="AutoGroup" />
+    </ShowAsAssociation>
+  </Interface>
+  <Font Name="Segoe UI" Size="9" />
+</ClassDiagram>
