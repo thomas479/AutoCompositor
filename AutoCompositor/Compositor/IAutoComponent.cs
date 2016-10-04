@@ -31,6 +31,5 @@ namespace AutoCompositor.Compositor
         PointF Location { get; set; }
         Color color { get; set; }
         PictureBox image { get; set; }
-        AutoGroup AutoGroup { get; set; }
     }
 }
